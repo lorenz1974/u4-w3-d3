@@ -10,7 +10,7 @@ public class Main {
 
         Persona persona = new Persona("Lorenzo", "Lione", LocalDate.parse("1974-09-07"), "l.lione@email.com", "M");
         PersonaDao personaDao = new PersonaDao();
-        // personaDao.save(persona);
+        personaDao.save(persona);
         System.out.println(persona);
 
     }

@@ -1,6 +1,8 @@
 package u4w3d3.dao;
 
 import u4w3d3.entities.Persona;
+import u4w3d3.entities.Location;
+import u4w3d3.dao.EntityManagerUtil;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import jakarta.persistence.EntityManager;
 
 public class PersonaDao implements Dao {
 
-    EntityManager em = EntityManagerUtil.getEntityManager();
+    private EntityManager em = EntityManagerUtil.getEntityManager();
 
     @Override
     public Optional<Persona> get(long id) {
@@ -28,7 +30,9 @@ public class PersonaDao implements Dao {
             e.printStackTrace();
             return Optional.empty();
         } finally {
-            em.close();
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
         }
     }
 

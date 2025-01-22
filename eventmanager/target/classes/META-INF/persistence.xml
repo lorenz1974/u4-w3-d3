@@ -1,8 +1,9 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
     <persistence-unit name="eventManagerPU">
-        <class>u4w3.eventmanager.PersonaDAO</class>
-        <class>u4w3.eventmanager.PartecipazioneDAO</class>
-        <class>u4w3.eventmanager.LocationDAO</class>
+        <class>u4w3d3.entities.Persona</class>
+        <!-- <class>u4w3d3.entities.Partecipazione</class>
+        <class>u4w3d3.entities.Location</class>
+        <class>u4w3d3.entities.Event</class> -->
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4-w3-d3"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres" />
